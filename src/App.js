@@ -7,7 +7,7 @@ function App() {
   console.log(nums);
   return (
     <div className="App">
-      <Arithmetic newNum={setNums} />
+      <Arithmetic newNum={setNums} /> *16
     </div>
   );
 }
