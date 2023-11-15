@@ -1,21 +1,13 @@
+import {useState} from 'react';
 import './App.css';
+import Arithmetic from './Trial';
 
 function App() {
+  const [nums, setNums] = useState(5);
+  console.log(nums);
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Arithmetic newNum={setNums} />
     </div>
   );
 }
