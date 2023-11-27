@@ -1,4 +1,4 @@
-import {useReducer, useState} from 'react';
+import {useReducer} from 'react';
 
 function reducer(state, action) {
   console.log(state, action);
@@ -11,7 +11,9 @@ function DateCounter() {
   // const [count, setCount] = useState(0);
   // const [step, setStep] = useState(1);
 
-  const [count, dispatch] = useReducer(reducer, 0);
+  const initialStep = {count: 0, step: 1};
+  const [state, dispatch] = useReducer(reducer, initialStep);
+  const {count, step} = state;
 
   // This mutates the date object.
   const date = new Date('november 27 2023');
