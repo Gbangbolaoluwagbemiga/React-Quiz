@@ -21,14 +21,14 @@ function DateCounter() {
 
   const dec = function () {
     dispatch({type: 'dec'});
-    // setCount(count => count - step);
     // setCount((count) => count - 1);
+    // setCount(count => count - step);
   };
 
   const inc = function () {
     dispatch({type: 'inc'});
-    // setCount(count => count + step);
     // setCount((count) => count + 1);
+    // setCount(count => count + step);
   };
 
   const defineCount = function (e) {
