@@ -1,6 +1,4 @@
 import {useState} from 'react';
-import './App.css';
-import Arithmetic from './Trial';
 
 function App() {
   const [nums, setNums] = useState(5);
