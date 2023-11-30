@@ -14,7 +14,7 @@ function reducer(state, action) {
     case 'reset':
       return {count: 0, step: 1};
     default:
-      console.log('Still confused');
+      console.log('Getting it');
   }
 }
 
