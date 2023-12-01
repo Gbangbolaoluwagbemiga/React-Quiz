@@ -13,6 +13,9 @@ function reducer(state, action) {
     case 'dataReceived':
       return {...state, questions: action.payload, status: 'ready'};
 
+    case 'dataFailed':
+      return {...state, status: 'error'};
+
     default:
       throw new Error('Something went wrong');
   }
@@ -28,7 +31,7 @@ function App() {
         const data = await res.json();
         dispatch({type: 'dataReceived', payload: data});
       } catch (error) {
-        console.log(error);
+        dispatch({type: 'dataFailed'});
       }
     }
     fetcher();
