@@ -4,6 +4,7 @@ import Loader from './Loader';
 import Error from './Error';
 import StartScreen from './startScreen';
 import Main from './Main';
+import Question from './Question';
 import {useReducer} from 'react';
 
 const initialState = {
@@ -46,6 +47,7 @@ function App() {
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
         {status === 'ready' && <StartScreen numQuest={questions.length} />}
+        {status === 'active' && <Question />}
       </Main>
     </div>
   );
