@@ -11,9 +11,10 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case 'dataReceived':
-      return;
+      return {...state, questions: action.payload, status: 'ready'};
 
     default:
+      throw new Error('Something went wrong');
   }
 }
 
