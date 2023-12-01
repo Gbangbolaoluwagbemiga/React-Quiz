@@ -45,7 +45,7 @@ function App() {
       <Main className="main">
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
-        {status === 'ready' && <StartScreen />}
+        {status === 'ready' && <StartScreen numQuest={questions.length} />}
       </Main>
     </div>
   );
