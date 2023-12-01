@@ -3,18 +3,17 @@ import Header from './Header';
 import Main from './Main';
 import {useReducer} from 'react';
 
-const initialState={
-  questions:[],
-  status:'loading'
-}
+const initialState = {
+  questions: [],
+  status: 'loading',
+};
 
 function reducer(state, action) {
-  switch () {
-    case 'value':
-      break;
+  switch (action.type) {
+    case 'dataReceived':
+      return;
 
     default:
-      break;
   }
 }
 
@@ -26,7 +25,7 @@ function App() {
       try {
         const res = await fetch('http://localhost:8000/questions');
         const data = await res.json();
-        console.log(data);
+        dispatch({type: 'dataReceived', payload: data});
       } catch (error) {
         console.log(error);
       }
