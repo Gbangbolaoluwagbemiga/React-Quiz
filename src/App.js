@@ -10,6 +10,7 @@ import {useReducer} from 'react';
 const initialState = {
   questions: [],
   status: 'loading',
+  index: 0,
 };
 
 function reducer(state, action) {
@@ -29,7 +30,10 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [{questions, status}, dispatch] = useReducer(reducer, initialState);
+  const [{questions, status, index}, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   useEffect(function () {
     async function fetcher() {
@@ -52,7 +56,7 @@ function App() {
         {status === 'ready' && (
           <StartScreen numQuest={questions.length} dispatch={dispatch} />
         )}
-        {status === 'active' && <Question />}
+        {status === 'active' && <Question question={questions[index]} />}
       </Main>
     </div>
   );

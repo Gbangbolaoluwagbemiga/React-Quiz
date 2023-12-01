@@ -1,4 +1,5 @@
-function Question() {
+function Question({question}) {
+  console.log(question);
   return <div>Question</div>;
 }
 
