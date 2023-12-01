@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import Header from './Header';
 import Loader from './Loader';
 import Error from './Error';
+import startScreen from './startScreen';
 import Main from './Main';
 import {useReducer} from 'react';
 
@@ -44,6 +45,7 @@ function App() {
       <Main className="main">
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
+        {status === 'ready' && <startScreen />}
       </Main>
     </div>
   );
