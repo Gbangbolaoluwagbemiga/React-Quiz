@@ -3,6 +3,11 @@ import Header from './Header';
 import Main from './Main';
 import {useReducer} from 'react';
 
+const initialState={
+  questions:[],
+  status:'loading'
+}
+
 function reducer(state, action) {
   switch () {
     case 'value':
