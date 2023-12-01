@@ -1,8 +1,21 @@
 import {useEffect} from 'react';
 import Header from './Header';
 import Main from './Main';
+import {useReducer} from 'react';
+
+function reducer(state, action) {
+  switch () {
+    case 'value':
+      break;
+
+    default:
+      break;
+  }
+}
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   useEffect(function () {
     async function fetcher() {
       try {
