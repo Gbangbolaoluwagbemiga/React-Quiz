@@ -20,6 +20,9 @@ function reducer(state, action) {
     case 'dataFailed':
       return {...state, status: 'error'};
 
+    case 'start':
+      return {...state, status: 'active'};
+
     default:
       throw new Error('Something went wrong');
   }
@@ -46,7 +49,9 @@ function App() {
       <Main className="main">
         {status === 'loading' && <Loader />}
         {status === 'error' && <Error />}
-        {status === 'ready' && <StartScreen numQuest={questions.length} />}
+        {status === 'ready' && (
+          <StartScreen numQuest={questions.length} dispatch={dispatch} />
+        )}
         {status === 'active' && <Question />}
       </Main>
     </div>
