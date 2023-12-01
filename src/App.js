@@ -1,5 +1,7 @@
 import {useEffect} from 'react';
 import Header from './Header';
+import Loader from './Loader';
+import Error from './Error';
 import Main from './Main';
 import {useReducer} from 'react';
 
@@ -22,7 +24,7 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{questions, status}, dispatch] = useReducer(reducer, initialState);
 
   useEffect(function () {
     async function fetcher() {
@@ -37,7 +39,7 @@ function App() {
     fetcher();
   }, []);
   return (
-    <div className="">
+    <div className="app">
       <Header />
       <Main className="main">
         <p>1/15</p>
