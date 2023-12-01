@@ -5,7 +5,10 @@ function App() {
   return (
     <div className="">
       <Header />
-      <Main />
+      <Main className="main">
+        <p>1/15</p>
+        <p>Question</p>
+      </Main>
     </div>
   );
 }
