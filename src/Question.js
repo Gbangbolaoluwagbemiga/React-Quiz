@@ -5,13 +5,14 @@ function Question({question}) {
       <h4>{question.question}</h4>
       <div className="options">
         {question.options.map(option => (
-          <button key={option} className="btn btn-option">
-            {option}
-          </button>
+          <OptBtn option={option} key={option} />
         ))}
       </div>
     </div>
   );
+}
+function OptBtn({option}) {
+  return <button className="btn btn-option">{option}</button>;
 }
 
 export default Question;
