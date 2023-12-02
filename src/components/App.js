@@ -4,6 +4,7 @@ import Loader from './Loader';
 import Error from './Error';
 import StartScreen from './startScreen';
 import Main from './Main';
+import NextButton from './NextButton';
 import Question from '../Question';
 import {useReducer} from 'react';
 
