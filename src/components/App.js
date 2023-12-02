@@ -4,7 +4,7 @@ import Loader from './Loader';
 import Error from './Error';
 import StartScreen from './startScreen';
 import Main from './Main';
-import Question from './Question';
+import Question from '../Question';
 import {useReducer} from 'react';
 
 const initialState = {
