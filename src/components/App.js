@@ -57,18 +57,6 @@ function App() {
     dispatch({type: 'dataReceived', payload: questApi});
   }, []);
 
-  // useEffect(function () {
-  //   async function fetcher() {
-  //     try {
-  //       const res = await fetch('http://localhost:8000/questions');
-  //       const data = await res.json();
-  //       dispatch({type: 'dataReceived', payload: data});
-  //     } catch (error) {
-  //       dispatch({type: 'dataFailed'});
-  //     }
-  //   }
-  //   fetcher();
-  // }, []);
   return (
     <div className="app">
       <Header />
