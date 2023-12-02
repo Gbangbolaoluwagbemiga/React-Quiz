@@ -1,4 +1,5 @@
 function Question({question, dispatch, answer}) {
+  const hasAnswer = answer !== null;
   console.log(question);
   return (
     <div>
@@ -12,19 +13,25 @@ function Question({question, dispatch, answer}) {
             answer={answer}
             curIndex={index}
             question={question}
+            hasAnswer={hasAnswer}
           />
         ))}
       </div>
     </div>
   );
 }
-function OptBtn({option, dispatch, answer, curIndex, question}) {
+function OptBtn({option, dispatch, answer, curIndex, question, hasAnswer}) {
   return (
     <button
-      className={` btn btn-option ${
-        curIndex === question.correctOption ? 'correct' : 'wrong'
-      } ${curIndex === answer ? 'answer' : ''}`}
+      className={` btn btn-option  ${curIndex === answer ? 'answer' : ''} ${
+        hasAnswer
+          ? curIndex === question.correctOption
+            ? 'correct'
+            : 'wrong'
+          : ''
+      }`}
       onClick={() => dispatch({type: 'newAnswer', payload: curIndex})}
+      disabled={hasAnswer}
     >
       {option}
     </button>
