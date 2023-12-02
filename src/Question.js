@@ -11,16 +11,19 @@ function Question({question, dispatch, answer}) {
             dispatch={dispatch}
             answer={answer}
             curIndex={index}
+            question={question}
           />
         ))}
       </div>
     </div>
   );
 }
-function OptBtn({option, dispatch, answer, curIndex}) {
+function OptBtn({option, dispatch, answer, curIndex, question}) {
   return (
     <button
-      className="btn btn-option"
+      className={` btn btn-option ${
+        curIndex === question.correctOption ? 'correct' : 'wrong'
+      } ${curIndex === answer ? 'answer' : ''}`}
       onClick={() => dispatch({type: 'newAnswer', payload: curIndex})}
     >
       {option}
