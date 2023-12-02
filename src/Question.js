@@ -1,6 +1,5 @@
 function Question({question, dispatch, answer}) {
   const hasAnswer = answer !== null;
-  console.log(question);
   return (
     <div>
       <h4>{question.question}</h4>

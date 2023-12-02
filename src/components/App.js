@@ -38,7 +38,7 @@ function reducer(state, action) {
             : state.points,
       };
     case 'nextQuestion':
-      return {...state, index: state.index + 1};
+      return {...state, index: state.index + 1, answer: null};
 
     default:
       throw new Error('Something went wrong');
@@ -79,7 +79,7 @@ function App() {
               answer={answer}
               question={questions[index]}
             />
-            <NextButton dispatch={dispatch} />
+            <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
       </Main>
