@@ -1,12 +1,13 @@
 import {useEffect} from 'react';
+import {useReducer} from 'react';
 import Header from './Header';
 import Loader from './Loader';
 import Error from './Error';
 import StartScreen from './startScreen';
 import Main from './Main';
 import NextButton from './NextButton';
-import Question from '../Question';
-import {useReducer} from 'react';
+import data from './questions';
+import Question from './Question';
 
 const initialState = {
   questions: [],
@@ -15,6 +16,7 @@ const initialState = {
   answer: null,
   points: 0,
 };
+const {questions: questApi} = data;
 
 function reducer(state, action) {
   switch (action.type) {
@@ -52,17 +54,21 @@ function App() {
   );
 
   useEffect(function () {
-    async function fetcher() {
-      try {
-        const res = await fetch('http://localhost:8000/questions');
-        const data = await res.json();
-        dispatch({type: 'dataReceived', payload: data});
-      } catch (error) {
-        dispatch({type: 'dataFailed'});
-      }
-    }
-    fetcher();
+    dispatch({type: 'dataReceived', payload: questApi});
   }, []);
+
+  // useEffect(function () {
+  //   async function fetcher() {
+  //     try {
+  //       const res = await fetch('http://localhost:8000/questions');
+  //       const data = await res.json();
+  //       dispatch({type: 'dataReceived', payload: data});
+  //     } catch (error) {
+  //       dispatch({type: 'dataFailed'});
+  //     }
+  //   }
+  //   fetcher();
+  // }, []);
   return (
     <div className="app">
       <Header />
