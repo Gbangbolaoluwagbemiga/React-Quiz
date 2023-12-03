@@ -1,10 +1,11 @@
-function FinishQuiz({points, maxPoints}) {
-  const percentage = ({points} / {maxPoints}) * 100;
+function FinishQuiz({points, totalPoints}) {
+  const percentage = (points / totalPoints) * 100;
+  console.log(percentage);
   return (
     <div>
-      <p>
-        You scored <strong>{points}</strong> out of {maxPoints}{' '}
-        {Math.ceil(percentage)}
+      <p className="result">
+        You scored <strong>{points}</strong> out of {totalPoints} (
+        {Math.ceil(percentage)}%)
       </p>
     </div>
   );

@@ -93,7 +93,7 @@ function App() {
         )}
 
         {status === 'completed' && (
-          <FinishQuiz maxpoints={totalPoints} points={points} />
+          <FinishQuiz totalPoints={totalPoints} points={points} />
         )}
       </Main>
     </div>
