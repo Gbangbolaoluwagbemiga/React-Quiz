@@ -74,6 +74,7 @@ function App() {
               index={index + 1}
               points={points}
               questions={questions}
+              answer={answer}
             />
 
             <Question
