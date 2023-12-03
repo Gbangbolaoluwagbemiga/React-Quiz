@@ -5,6 +5,7 @@ function ProgressBar({index, numQuest, points, questions}) {
 
   return (
     <header className="progress">
+      <progress max={numQuest} value={index} />
       <p>
         Question <strong>{index}</strong>/ {numQuest}
       </p>
