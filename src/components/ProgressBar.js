@@ -1,8 +1,11 @@
-function ProgressBar({index, numQuest, points, questions, answer}) {
-  const totalPoints = questions
-    .map(cur => cur.points)
-    .reduce((acc, cur) => acc + cur, 0);
-
+function ProgressBar({
+  index,
+  numQuest,
+  points,
+  questions,
+  answer,
+  totalPoints,
+}) {
   return (
     <header className="progress">
       <progress max={numQuest} value={index + Number(answer !== null)} />

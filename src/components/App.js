@@ -59,6 +59,10 @@ function App() {
     dispatch({type: 'dataReceived', payload: questApi});
   }, []);
 
+  const totalPoints = questions
+    .map(cur => cur.points)
+    .reduce((acc, cur) => acc + cur, 0);
+
   return (
     <div className="app">
       <Header />
@@ -76,6 +80,7 @@ function App() {
               points={points}
               questions={questions}
               answer={answer}
+              totalPoints={totalPoints}
             />
 
             <Question
@@ -87,7 +92,9 @@ function App() {
           </>
         )}
 
-        {status === 'completed' && <FinishQuiz />}
+        {status === 'completed' && (
+          <FinishQuiz maxpoints={totalPoints} points={points} />
+        )}
       </Main>
     </div>
   );
