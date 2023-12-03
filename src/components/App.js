@@ -9,6 +9,7 @@ import NextButton from './NextButton';
 import data from './questions';
 import Question from './Question';
 import ProgressBar from './ProgressBar';
+import FinishQuiz from './FinishQuiz';
 
 const initialState = {
   questions: [],
@@ -85,6 +86,8 @@ function App() {
             <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
+
+        {status === 'completed' && <FinishQuiz />}
       </Main>
     </div>
   );
