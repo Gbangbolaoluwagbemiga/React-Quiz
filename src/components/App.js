@@ -8,6 +8,7 @@ import Main from './Main';
 import NextButton from './NextButton';
 import data from './questions';
 import Question from './Question';
+import ProgressBar from './ProgressBar';
 
 const initialState = {
   questions: [],
@@ -68,6 +69,8 @@ function App() {
         )}
         {status === 'active' && (
           <>
+            <ProgressBar numQuest={questions.length} index={index} />
+
             <Question
               dispatch={dispatch}
               answer={answer}
