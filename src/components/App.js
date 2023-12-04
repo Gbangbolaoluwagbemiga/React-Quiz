@@ -56,7 +56,9 @@ function App() {
   );
 
   useEffect(function () {
-    dispatch({type: 'dataReceived', payload: questApi});
+    setTimeout(() => {
+      dispatch({type: 'dataReceived', payload: questApi});
+    }, 1500);
   }, []);
 
   const totalPoints = questions
