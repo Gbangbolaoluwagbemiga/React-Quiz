@@ -1,6 +1,6 @@
 function FinishQuiz({points, totalPoints}) {
   const percentage = (points / totalPoints) * 100;
-  console.log(percentage);
+
   return (
     <div>
       <p className="result">
