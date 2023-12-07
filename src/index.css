@@ -180,6 +180,7 @@ progress {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.6rem;
+  width: 30rem;
 }
 
 .result span {
@@ -294,16 +295,17 @@ progress {
     border-radius: 100px;
   }
   .result {
-    padding: 1rem 0;
-    font-size: 1rem;
+    padding: 1.5rem 0;
+    font-size: 1.55rem;
+    width: 25rem;
   }
 
   .result span {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .highscore {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-bottom: 4rem;
   }
 }
