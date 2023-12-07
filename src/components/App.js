@@ -96,7 +96,6 @@ function App() {
             <NextButton dispatch={dispatch} answer={answer} />
           </>
         )}
-        {index === 15 && dispatch({type: 'completed'})}
         {status === 'completed' && (
           <FinishQuiz totalPoints={totalPoints} points={points} />
         )}
