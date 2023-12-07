@@ -44,6 +44,9 @@ function reducer(state, action) {
     case 'nextQuestion':
       return {...state, index: state.index + 1, answer: null};
 
+    case 'completed':
+      return {...state, status: 'completed'};
+
     default:
       throw new Error('Something went wrong');
   }
