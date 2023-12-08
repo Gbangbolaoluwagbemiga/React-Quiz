@@ -55,7 +55,7 @@ function reducer(state, action) {
     case 'reset':
       return {
         ...state,
-        status: 'loading',
+        status: 'ready',
         index: 0,
         answer: null,
         points: 0,
