@@ -45,7 +45,7 @@ function reducer(state, action) {
       return {...state, index: state.index + 1, answer: null};
 
     case 'completed':
-      return {...state, status: 'completed'};
+      return {...state, status: 'finish'};
 
     default:
       throw new Error('Something went wrong');
@@ -101,7 +101,7 @@ function App() {
             />
           </>
         )}
-        {status === 'completed' && (
+        {status === 'finish' && (
           <FinishQuiz totalPoints={totalPoints} points={points} />
         )}
       </Main>
