@@ -70,8 +70,10 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [{questions, status, index, answer, points, highscore}, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    {questions, status, index, answer, points, highscore, countDown},
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   useEffect(function () {
     setTimeout(() => {
@@ -109,7 +111,7 @@ function App() {
               question={questions[index]}
             />
             <Footer>
-              <Timer dispatch={dispatch} />
+              <Timer dispatch={dispatch} countDown={countDown} />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
