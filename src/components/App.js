@@ -11,6 +11,7 @@ import Question from './Question';
 import ProgressBar from './ProgressBar';
 import FinishQuiz from './FinishQuiz';
 import Footer from './Footer';
+import Timer from './Timer';
 
 const initialState = {
   questions: [],
@@ -105,6 +106,7 @@ function App() {
               question={questions[index]}
             />
             <Footer>
+              <Timer />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
