@@ -10,6 +10,7 @@ import data from './questions';
 import Question from './Question';
 import ProgressBar from './ProgressBar';
 import FinishQuiz from './FinishQuiz';
+import Footer from './Footer';
 
 const initialState = {
   questions: [],
@@ -103,12 +104,14 @@ function App() {
               answer={answer}
               question={questions[index]}
             />
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
-              numQuest={questions.length}
-            />
+            <Footer>
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuest={questions.length}
+              />
+            </Footer>
           </>
         )}
         {status === 'finish' && (
