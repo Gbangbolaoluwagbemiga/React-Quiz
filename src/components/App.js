@@ -46,8 +46,12 @@ function reducer(state, action) {
       return {...state, index: state.index + 1, answer: null};
 
     case 'completed':
-      let highscore = 0;
-      return {...state, status: 'finish'};
+      return {
+        ...state,
+        status: 'finish',
+        highscore:
+          state.points > state.highscore ? state.points : state.highscore,
+      };
 
     default:
       throw new Error('Something went wrong');
