@@ -54,12 +54,9 @@ function reducer(state, action) {
       };
     case 'reset':
       return {
-        ...state,
+        ...initialState,
         status: 'ready',
-        index: 0,
-        answer: null,
-        points: 0,
-        highscore: 0,
+        question: state.questions,
       };
 
     default:
