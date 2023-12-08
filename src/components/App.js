@@ -119,6 +119,7 @@ function App() {
             totalPoints={totalPoints}
             points={points}
             highscore={highscore}
+            dispatch={dispatch}
           />
         )}
       </Main>
