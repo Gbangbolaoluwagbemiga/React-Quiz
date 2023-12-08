@@ -12,12 +12,12 @@ function FinishQuiz({points, totalPoints, highscore}) {
   return (
     <div>
       <p className="result">
-        <span> {emoji} </span> You scored <strong>{points}</strong> out of{' '}
-        {totalPoints} ({Math.ceil(percentage)}%)
+        {emoji} You scored <strong>{points}</strong> out of {totalPoints} (
+        {Math.ceil(percentage)}%)
       </p>
 
       <p className="highscore">
-        (Highscore: <em></em> {highscore} points)
+        (Highscore: <strong>{highscore}</strong> points)
       </p>
     </div>
   );
