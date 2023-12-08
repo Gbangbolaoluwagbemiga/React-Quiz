@@ -106,7 +106,11 @@ function App() {
           </>
         )}
         {status === 'finish' && (
-          <FinishQuiz totalPoints={totalPoints} points={points} />
+          <FinishQuiz
+            totalPoints={totalPoints}
+            points={points}
+            highscore={highscore}
+          />
         )}
       </Main>
     </div>

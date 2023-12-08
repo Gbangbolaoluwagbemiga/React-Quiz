@@ -1,4 +1,4 @@
-function FinishQuiz({points, totalPoints}) {
+function FinishQuiz({points, totalPoints, highscore}) {
   const percentage = (points / totalPoints) * 100;
 
   let emoji;
@@ -16,7 +16,9 @@ function FinishQuiz({points, totalPoints}) {
         {totalPoints} ({Math.ceil(percentage)}%)
       </p>
 
-      <p className="highscore">(Highscore: X points)</p>
+      <p className="highscore">
+        (Highscore: <em></em> {highscore} points)
+      </p>
     </div>
   );
 }
