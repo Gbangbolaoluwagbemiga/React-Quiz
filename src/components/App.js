@@ -109,7 +109,7 @@ function App() {
               question={questions[index]}
             />
             <Footer>
-              <Timer />
+              <Timer dispatch={dispatch} />
               <NextButton
                 dispatch={dispatch}
                 answer={answer}
