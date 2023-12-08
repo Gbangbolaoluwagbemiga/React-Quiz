@@ -20,6 +20,7 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
+  countDown: 10,
 };
 const {questions: questApi} = data;
 
@@ -60,6 +61,8 @@ function reducer(state, action) {
         status: 'ready',
         question: state.questions,
       };
+    case 'tick':
+      return {...state, countDown: state.countDown - 1};
 
     default:
       throw new Error('Something went wrong');

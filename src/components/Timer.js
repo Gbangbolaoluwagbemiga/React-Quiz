@@ -2,9 +2,7 @@ import {useEffect} from 'react';
 
 function Timer() {
   useEffect(function () {
-    setInterval(() => {
-      console.log('hi');
-    }, 1000);
+    setInterval(() => {}, 1000);
   }, []);
 
   return <div className="timer"></div>;
