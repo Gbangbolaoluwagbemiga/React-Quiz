@@ -59,7 +59,7 @@ function reducer(state, action) {
       return {
         ...initialState,
         status: 'ready',
-        question: state.questions,
+        questions: state.questions,
       };
     case 'tick':
       return {

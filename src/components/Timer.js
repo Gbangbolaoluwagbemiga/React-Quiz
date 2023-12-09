@@ -3,9 +3,11 @@ import {useEffect} from 'react';
 function Timer({dispatch, countDown}) {
   useEffect(
     function () {
-      setInterval(() => {
+      const id = setInterval(() => {
         dispatch({type: 'tick'});
       }, 1000);
+
+      return () => clearInterval(id);
     },
     [dispatch]
   );
