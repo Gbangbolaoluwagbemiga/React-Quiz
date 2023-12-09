@@ -10,13 +10,6 @@ function Timer({dispatch, countDown}) {
     [dispatch]
   );
 
-  useEffect(
-    function () {
-      if (countDown === 0) return dispatch({type: 'completed'});
-    },
-    [countDown, dispatch]
-  );
-
   return <div className="timer">{countDown}</div>;
 }
 

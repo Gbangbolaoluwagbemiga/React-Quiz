@@ -62,7 +62,11 @@ function reducer(state, action) {
         question: state.questions,
       };
     case 'tick':
-      return {...state, countDown: state.countDown - 1};
+      return {
+        ...state,
+        countDown: state.countDown - 1,
+        status: state.countDown === 0 ? 'finish' : state.status,
+      };
 
     default:
       throw new Error('Something went wrong');
