@@ -22,7 +22,7 @@ const initialState = {
   highscore: 0,
   countDown: null,
 };
-const secPerQuestion = 30;
+const secPerQuestion = 20;
 const {questions: questApi} = data;
 
 function reducer(state, action) {
