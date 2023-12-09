@@ -20,8 +20,9 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
-  countDown: 10,
+  countDown: null,
 };
+const secPerQuestion = 30;
 const {questions: questApi} = data;
 
 function reducer(state, action) {
@@ -33,7 +34,11 @@ function reducer(state, action) {
       return {...state, status: 'error'};
 
     case 'start':
-      return {...state, status: 'active'};
+      return {
+        ...state,
+        status: 'active',
+        countDown: state.questions.length * secPerQuestion,
+      };
 
     case 'newAnswer':
       const question = state.questions.at(state.index);
