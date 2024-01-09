@@ -26,7 +26,7 @@ function App() {
               <ProgressBar />
               <Question />
               <Footer>
-                <Timer dispatch={dispatch} countDown={countDown} />
+                <Timer />
                 <NextButton
                   dispatch={dispatch}
                   answer={answer}
