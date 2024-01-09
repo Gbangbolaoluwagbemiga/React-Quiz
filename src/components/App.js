@@ -24,12 +24,7 @@ function App() {
           {status === 'active' && (
             <>
               <ProgressBar />
-
-              <Question
-                dispatch={dispatch}
-                answer={answer}
-                question={questions[index]}
-              />
+              <Question />
               <Footer>
                 <Timer dispatch={dispatch} countDown={countDown} />
                 <NextButton
