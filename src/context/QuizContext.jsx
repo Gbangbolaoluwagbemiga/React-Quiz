@@ -8,7 +8,9 @@ function QuizProvider({children}) {
 
 function UseQuiz() {
   const context = useContext(QuizProvider);
+  if (context === undefined)
+    throw new Error(`context used outside the Quiz context scope`);
   return context;
 }
 
-export default QuizProvider;
+export {QuizProvider, UseQuiz};
