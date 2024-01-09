@@ -1,6 +1,6 @@
 import {UseQuiz} from '../context/QuizContext';
 
-function StartScreeen() {
+function uStartScreeen() {
   const {numQuest, dispatch} = UseQuiz();
   return (
     <div className="start">
