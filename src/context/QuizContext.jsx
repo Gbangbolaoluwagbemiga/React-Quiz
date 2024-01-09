@@ -74,6 +74,8 @@ function QuizProvider({children}) {
     dispatch,
   ] = useReducer(reducer, initialState);
 
+  const numQuest = questions.length;
+
   useEffect(function () {
     setTimeout(() => {
       dispatch({type: 'dataReceived', payload: questApi});
@@ -86,7 +88,7 @@ function QuizProvider({children}) {
   return (
     <QuizContext.Provider
       value={{
-        questions,
+        numQuest,
         status,
         index,
         answer,

@@ -31,14 +31,7 @@ function App() {
               </Footer>
             </>
           )}
-          {status === 'finish' && (
-            <FinishQuiz
-              totalPoints={totalPoints}
-              points={points}
-              highscore={highscore}
-              dispatch={dispatch}
-            />
-          )}
+          {status === 'finish' && <FinishQuiz />}
         </Main>
       </div>
     </QuizProvider>
