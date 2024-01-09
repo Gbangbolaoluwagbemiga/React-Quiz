@@ -1,20 +1,18 @@
-import {useEffect} from 'react';
-import {useReducer} from 'react';
 import Header from './Header';
 import Loader from './Loader';
 import Error from './Error';
 import StartScreen from './startScreen';
 import Main from './Main';
 import NextButton from './NextButton';
-import data from './questions';
 import Question from './Question';
 import ProgressBar from './ProgressBar';
 import FinishQuiz from './FinishQuiz';
 import Footer from './Footer';
 import Timer from './Timer';
-import {QuizProvider} from '../context/QuizContext';
+import {QuizProvider, UseQuiz} from '../context/QuizContext';
 
 function App() {
+  const {status} = UseQuiz();
   return (
     <QuizProvider>
       <div className="app">
@@ -22,19 +20,10 @@ function App() {
         <Main className="main">
           {status === 'loading' && <Loader />}
           {status === 'error' && <Error />}
-          {status === 'ready' && (
-            <StartScreen numQuest={questions.length} dispatch={dispatch} />
-          )}
+          {status === 'ready' && <StartScreen />}
           {status === 'active' && (
             <>
-              <ProgressBar
-                numQuest={questions.length}
-                index={index + 1}
-                points={points}
-                questions={questions}
-                answer={answer}
-                totalPoints={totalPoints}
-              />
+              <ProgressBar />
 
               <Question
                 dispatch={dispatch}
