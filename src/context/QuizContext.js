@@ -75,6 +75,7 @@ function QuizProvider({children}) {
   ] = useReducer(reducer, initialState);
 
   const numQuest = questions.length;
+  const question = questions[index];
 
   useEffect(function () {
     setTimeout(() => {
@@ -88,6 +89,8 @@ function QuizProvider({children}) {
   return (
     <QuizContext.Provider
       value={{
+        questions,
+        question,
         numQuest,
         status,
         index,
@@ -96,6 +99,7 @@ function QuizProvider({children}) {
         highscore,
         countDown,
         totalPoints,
+        dispatch,
       }}
     >
       {children}
@@ -104,7 +108,7 @@ function QuizProvider({children}) {
 }
 
 function UseQuiz() {
-  const context = useContext(QuizProvider);
+  const context = useContext(QuizContext);
   if (context === undefined)
     throw new Error(`context used outside the Quiz context scope`);
   return context;
