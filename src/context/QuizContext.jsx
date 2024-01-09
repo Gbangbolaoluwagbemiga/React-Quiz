@@ -1,5 +1,14 @@
-function QuizContext() {
-  return <div></div>;
+import {createContext, useContext} from 'react';
+
+const QuizContext = createContext();
+
+function QuizProvider({children}) {
+  return <QuizContext.Provider value={{}}>{children}</QuizContext.Provider>;
 }
 
-export default QuizContext;
+function UseQuiz() {
+  const context = useContext(QuizProvider);
+  return context;
+}
+
+export default QuizProvider;
