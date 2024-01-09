@@ -27,12 +27,7 @@ function App() {
               <Question />
               <Footer>
                 <Timer />
-                <NextButton
-                  dispatch={dispatch}
-                  answer={answer}
-                  index={index}
-                  numQuest={questions.length}
-                />
+                <NextButton />
               </Footer>
             </>
           )}
