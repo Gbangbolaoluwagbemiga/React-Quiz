@@ -24,7 +24,7 @@ function App() {
           <>
             <ProgressBar />
             <Question />
-            <Footer>
+            {/* <Footer> */}
               <Timer />
               <NextButton />
             </Footer>
